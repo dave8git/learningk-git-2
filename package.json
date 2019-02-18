@@ -11,13 +11,16 @@
         "init:files": "touch README.md index.html sass/style.scss js/script.js",
         "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
         "build": "npm-run-all build:* test",
-        "build:clean": "rimraf -rf css/*.css",
+        "build:clean": "rimraf -rf css/*.*",
         "build:sass": "node-sass --output-style compact -o css sass",
         "build:autoprefixer": "autoprefixer-cli css/style.css",
         "build-dev:sass": "node-sass --output-style expanded --source-map true -o css sass",
-        "watch": "npm-run-all -p watch:* build",
-        "watch:sassprefixer": "onchange -d 100 css/style.css -- autoprefixer-cli -o css/style.css && node-sass --output-style expanded --source-map true -o css sass --watch",
-        "watch:browsersync": "browser-sync start --server --files css/*.css *.html"
+        
+        "watch": "npm-run-all -p watch:*",
+        "watch:sassprefixer": "onchange sass/*.scss -- npm-run-all -p sassprefixer:*",
+        "watch:browsersync": "browser-sync start --server --files css/*.css *.html",
+        "sassprefixer:sass": "node-sass --output-style expanded --source-map true -o css sass",
+	    "sassprefixer:autoprefixer": "autoprefixer-cli -o css/style.css css/style.css"
     },
     "keywords": [],
     "author": "",

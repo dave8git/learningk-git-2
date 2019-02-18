@@ -7,7 +7,7 @@ body {
         background-attachment: fixed;
     }
     .body-italic {
-        font-style: italic;
+        font-style: bold;
     }
     .song-wrapper { 
         width: 200px; 
@@ -21,11 +21,7 @@ body {
     }
     .song-title {
         font-weight: bold;
-        color: red; 
+        color: green; 
         border-left: 2px black dotted; 
         padding-left: 10px;
-    }
-    .test {
-        display: flex; 
-        flex-wrap: wrap;
     }
