@@ -26,7 +26,7 @@ body {
 
 .song-title {
   font-weight: bold;
-  color: green;
+  color: violet;
   border-left: 2px black dotted;
   padding-left: 10px;
 }
